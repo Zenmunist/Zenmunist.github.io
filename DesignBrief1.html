@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+         <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css"> 
+         <link rel="stylesheet" type="text/css" href="css/html.css">
+         <script src="jquery-3.3.1.min.js"></script>
+        
+        <style>
+        .dropbtn {
+            background-color:transparent;
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(60,177,160, 1);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: rgba(60,140,140, 1)}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(60,140,140, 1);
+        }
+            a:hover{
+               color: white;
+            }
+            .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            background-color:  rgba(60,140,140, 1);
+            color: #b30044;
+        }
+
+        </style>
+    </head>
+    <title>Design Brief</title>
+    
+    <body style="backgound-color: black;">
+        <nav class="navbar navbar-default navbar-fixed-top" style="background: linear-gradient(to right,rgba(60,177,160, .8), rgba(60,177,190, 1)); margin:0; z-index: 1; ">
+              <div class="container-fluid">
+                <div class="row" style="border-bottom:3px solid white;padding-left:15vw;">
+                  <ul class="nav navbar-nav">
+                  <li><a href="TSA.html" style ="color:white;padding-bottom: 0px; padding: 15px; 15px; 15px; 15px;"><img src="images/CTE/White%20TSa%20group.png" style="max-height:16px;"></img> TSA <span class="fa fa-angle-double-right"></span></a></li>
+                  <li style="text-align: center;"><a href="index.html" style ="color:white; padding-bottom: 0px; padding: 15px; 15px; 15px; 15px;"><span class="glyphicon glyphicon-briefcase"></span> CTE <span class="fa fa-angle-double-right"></span></a></li>
+                <div class="dropdown">
+                  <button class="dropbtn"><img src="images/CTE/Whiterocketshipicon2.png" style="max-height:18px; max-width:100px; transform: rotate(45deg);"></img> DESIGN BRIEF <span class="fa fa-angle-double-right"></span></button>
+                  <div class="dropdown-content">
+                    <a href="DesignBrief1.html">Design Brief Page1</a>
+                    <a href="#">Design Brief Page2</a>
+                    <a href="#">Bibliography</a>
+                  </div>
+                </div>
+
+                  </ul>
+                </div>
+                <div class="row" style ="padding-left:30vw;">
+                    <ul class="nav navbar-nav">
+                          <li style="min-height: inherit"><a href="#About" style ="color:white;padding-bottom: 0px; padding: 10px; 15px; 0px; 15px;margin-bottom: 0;max-height: inherit;min-height: inherit"><span class="fa fa-location-arrow fa-lg"></span>ABOUT</a></li>
+                          <li><a href="#Educational" style ="color:white;padding-bottom: 0px; padding: 10px; 15px; 10px; 15px;"><span class="fa fa-puzzle-piece fa-lg " style="-webkit-transform: rotate(45deg);"></span> EDUCATIONAL</a></li>
+                          <li><a href="#Business" style ="color:white;padding-bottom: 0px; padding: 10px; 15px; 10px; 15px;"><img src="Images/CTE/CTE%20student%20Projects.png"style="max-height: 23px;max-width: 20px; padding-bottom: 2px;"></img>  BUSINESS</a></li>
+                    </ul>
+                </div>
+              </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row" id="#">
+                <div class="thumbnail text-center"> 
+                    <img src="Images/DesignBrief/DesignBrief_Intro.jpg" class="img-responsive text-center" style="width:100%; height: 100vh;">
+                </div>
+            </div>
+            <div class="row" id="About">
+                <img src="Images/DesignBrief/DesignBrief_About.jpg" style="width:100%; height: auto;">
+            </div>
+            <div class="row" id="Educational">
+                <img src="Images/DesignBrief/DesignBrief_Educational.jpg" style="width:100%; height: auto;">
+            </div>
+            <div class="row" id="Business">
+                <img src="Images/DesignBrief/DesignBrief_Business.jpg" style="width:100%; height: auto;">
+            </div>
+        </div>
+        <script>
+            // Select all links with hashes
+        $('a[href*="#"]')
+          // Remove links that don't actually link to anything
+          .not('[href="#"]')
+          .not('[href="#0"]')
+          .click(function(event) {
+            // On-page links
+            if (
+              location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+              && 
+              location.hostname == this.hostname
+            ) {
+              // Figure out element to scroll to
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              // Does a scroll target exist?
+              if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                  scrollTop: target.offset().top
+                }, 1000, function() {
+                  // Callback after animation
+                  // Must change focus!
+                  var $target = $(target);
+                  $target.focus();
+                  if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                  } else {
+                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                  };
+                });
+              }
+            }
+          });
+        </script>
+        
+        
+        
+    <script src="js/bootstrap.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+
+</html>                                                                                                                                                                                                                 
